@@ -1,0 +1,101 @@
+NOME: KAIO GOMES DO NASCIMENTO MAZZA | DESN NOTURNO
+
+==== EXERCICIO 1
+
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+		setlocale(LC_ALL, "Portuguese");
+	float sal, novosal;
+	// Mostra a mensagem antes da leitura do salário
+	printf("\nDigite o salário do funcionário: ");
+	// Recebe o salário
+	scanf("%f%*c",&sal);
+	// Calcula o novo salário
+	novosal = sal + sal * 25/100;
+	// Mostra o novo salário
+	printf("\nNovo salário = %0.2f", novosal);
+	// Para o programa a espera de um enter
+	getchar();
+	return 0;
+}
+
+==== EXERCICIO 2
+
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+		setlocale(LC_ALL, "Portuguese");
+	// Declarando variaveis utilizadas
+	float salario, imposto, gratificacao, novo_salario;
+	printf("Digite o salário do funcionário: ");
+	// Entrada do usuário do tipo float (f)
+	scanf("%f%*c", &salario);
+	// Variavel receberá 5% do salário
+	gratificacao = salario * 5/100;
+	// Variavel receberá 7% do salário
+	imposto = salario * 7/100;
+	// Mostra ao usuário o valor do imposto e da gratificacao
+	printf("\nImposto: %0.2f ", imposto);
+	printf("| Gratificação: %0.2f", gratificacao);
+	// O salario mais a gratificacao e menos o imposto
+	novo_salario = salario + gratificacao - imposto;
+	// Mostra ao usuário o salário após alterações
+	printf("\nSalário a receber: %0.2f", novo_salario);
+	
+	return 0;
+}
+
+==== EXERCICIO 3
+
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+		setlocale(LC_ALL, "Portuguese");
+	float valor, juros, rendimento, valor_total;
+	// Pede ao usuário um valor de deposito
+	printf("Digite o valor do depósito: ");
+	// Lê a resposta do usuário
+	scanf("%f%*c", &valor);
+	// Pede ao usuário uma taxa de juros
+	printf("Digite uma taxa de juros (%): ");
+	// Lê a resposta do usuário
+	scanf("%f%*c", &juros);
+	// Calcula o valor do rendimento
+	rendimento = valor * juros/100;
+	// Calcula o valor total do rendimento
+	valor_total = valor + rendimento;
+	// Mostra ao usuário o valor total
+	printf("O valor total do rendimento é: %0.2f", valor_total);
+	
+	return 0;
+}
+
+==== EXERCICIO 4
+
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+		setlocale(LC_ALL, "Portuguese");
+	int pe = 12, jarda = 3, milha = 1760;
+	float pes_c, polegadas_c, jardas_c, milhas_c;
+	// Pede ao usuário uma medida EM PÉS
+	printf("Digite uma medida em PÉS (ft): ");
+	scanf("%f%*c", &pes_c);
+	
+	// Realiza as conversões
+	polegadas_c = pes_c * pe;
+	jardas_c = pes_c / jarda;
+	milhas_c = jardas_c / milha;
+	
+	// Mostra os resultados
+	printf("Medida em polegadas: %f", polegadas_c);
+	printf("\nMedida em jardas: %f", jardas_c);
+	printf("\nMedida em milhas: %f", milhas_c);
+	
+	return 0;
+}
