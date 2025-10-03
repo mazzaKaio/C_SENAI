@@ -3,8 +3,8 @@
 
 main() {
 		setlocale(LC_ALL, "Portuguese");
-	float nota1, nota2, media_aluno;
-	int cont_alunos = 1, tot_reprovados, tot_aprovados, tot_exames, tot_classe, media_classe;
+	float nota1, nota2, media_aluno, media_classe, tot_classe;
+	int cont_alunos = 1, tot_reprovados = 0, tot_aprovados = 0, tot_exames = 0;
 	
 	while (cont_alunos <= 6) {
 		printf("\n----------------");
@@ -15,25 +15,26 @@ main() {
 		scanf("%f%*c", &nota2);
 		
 		media_aluno = (nota1+nota2) / 2;
-		tot_classe += media_aluno;
 		
 		printf("\n\nA média aritmética do aluno %d é: %0.2f", cont_alunos, media_aluno);
 		
+		tot_classe = tot_classe + media_aluno;
+		
 		if (media_aluno < 3) {
-			printf(" | Situação: Reprovado");
 			tot_reprovados++;
+			printf(" | Situação: Reprovado");
 		} else if (media_aluno <= 7) {
-			printf(" | Situação: Exame");
 			tot_exames++;
+			printf(" | Situação: Exame");
 		} else {
-			printf(" | Situação: Aprovado");
 			tot_aprovados++;
+			printf(" | Situação: Aprovado");
 		}
 		
 		cont_alunos++;
 	}
 	
-	media_classe = tot_classe/6;
+	media_classe = tot_classe / 6;
 	
 	printf("\n\n----------------");
 	printf("\nTotal de alunos Aprovados: %d", tot_aprovados);
